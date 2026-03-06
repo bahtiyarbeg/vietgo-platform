@@ -1,26 +1,21 @@
-<button onclick="bookTour()">Book tour</button>
+<h1>Tours in Nha Trang</h1>
 
-<script>
+<div>
 
-function bookTour(){
+<h3>3 Islands Tour</h3>
 
-fetch('/api/book', {
-method:'POST',
-headers:{
-'Content-Type':'application/json'
-},
-body:JSON.stringify({
-name:'Client',
-hotel:'Intercontinental',
-tour:'3 Islands',
-date:'2026-03-10'
-})
-})
-.then(res=>res.json())
-.then(data=>{
-alert(data.message)
-})
+price 35$
 
-}
+<button>Book</button>
 
-</script>
+</div>
+
+<div>
+
+<h3>Dalat Tour</h3>
+
+price 45$
+
+<button>Book</button>
+
+</div>
