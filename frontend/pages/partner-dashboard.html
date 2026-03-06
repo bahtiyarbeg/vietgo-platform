@@ -1,0 +1,42 @@
+<h1>Partner Dashboard</h1>
+
+<h2>Add new service</h2>
+
+<input id="title" placeholder="Service name">
+
+<select id="category">
+<option value="tour">Tour</option>
+<option value="transfer">Transfer</option>
+<option value="bike">Bike rental</option>
+<option value="car">Car rental</option>
+<option value="spa">Spa</option>
+<option value="food">Food delivery</option>
+</select>
+
+<input id="price" placeholder="Adult price">
+
+<button onclick="addService()">Add Service</button>
+
+<script>
+
+function addService(){
+
+fetch('/api/service/add',{
+method:'POST',
+headers:{
+'Content-Type':'application/json'
+},
+body:JSON.stringify({
+title:document.getElementById("title").value,
+category:document.getElementById("category").value,
+price:document.getElementById("price").value
+})
+})
+.then(res=>res.json())
+.then(data=>{
+alert("Service added")
+})
+
+}
+
+</script>
