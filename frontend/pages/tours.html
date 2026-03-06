@@ -1,9 +1,26 @@
-<h1>Tours</h1>
+<button onclick="bookTour()">Book tour</button>
 
-<div>
-3 Islands Tour
-</div>
+<script>
 
-<div>
-City Tour
-</div>
+function bookTour(){
+
+fetch('/api/book', {
+method:'POST',
+headers:{
+'Content-Type':'application/json'
+},
+body:JSON.stringify({
+name:'Client',
+hotel:'Intercontinental',
+tour:'3 Islands',
+date:'2026-03-10'
+})
+})
+.then(res=>res.json())
+.then(data=>{
+alert(data.message)
+})
+
+}
+
+</script>
