@@ -8,3 +8,11 @@ if ($uri == '/api/book') {
     $controller = new BookingController();
     $controller->createBooking();
 }
+require_once '../app/Controllers/ServiceController.php';
+
+if ($uri == '/api/service/add') {
+
+$controller = new ServiceController();
+$controller->addService();
+
+}
